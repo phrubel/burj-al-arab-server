@@ -26,15 +26,9 @@ admin.initializeApp({
 
 
 
-const pass = "ArabianHorse69"
-
-
-
-
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
   const bookings = client.db("burjAlArab").collection("bookings");
-  console.log('db Connect successfully')
 
   app.post('/addBooking', (req, res) => {
     const newBooking = req.body;
@@ -75,9 +69,5 @@ client.connect(err => {
 
 });
 
-
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
 
 app.listen(port)
